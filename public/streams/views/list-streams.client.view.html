@@ -1,0 +1,16 @@
+<section data-ng-controller="StreamsController" data-ng-init="find()">
+  <h1>Streams</h1>
+  <ul>
+    <li data-ng-repeat="stream in streams">
+      <a data-ng-href="#!/streams/{{stream._id}}" data-ng-bind="stream.title"></a>
+      <br>
+      <small data-ng-bind="stream.created | date:'medium'"></small>
+      <small>/</small>
+          <small data-ng-bind="stream.creator.fullName"></small>  <p data-ng-bind="stream.content">
+        </p>
+      </li>
+    </ul>
+  <div data-ng-hide="!streams || streams.length">
+      No streams yet! Why not <a href="/#!/streams/create">create one</a>
+  </div>
+</section>
