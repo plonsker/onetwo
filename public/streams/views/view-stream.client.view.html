@@ -1,0 +1,14 @@
+<section data-ng-controller="StreamsController" data-ng-init="findOne()">
+  <h1 data-ng-bind="stream.title"></h1>
+  <div data-ng-show="authentication.user.id == stream.creator._id">
+  <a href="/#!/streams/{{stream._id}}/edit">edit</a>
+    <a href="#" data-ng-click="delete();">delete</a>
+  </div>
+  <small>
+    <em>Posted on</em>
+    <em data-ng-bind="stream.created | date: 'mediumDate'"></em>
+    <em>by</em>
+    <em data-ng-bind="stream.creator.fullName"></em>
+    </small>
+    <p data-ng-bind="stream.content"></p>
+</section>
